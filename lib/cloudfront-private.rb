@@ -1,4 +1,7 @@
 require "cloudfront-private/version"
+require 'cloudfront-private/base'
+require 'cloudfront-private/configuration'
+require 'active_support/concern'
 
 module Cloudfront
   module Private
@@ -10,6 +13,11 @@ module Cloudfront
 	    end	
 	  end
 	  
-	  autoload :base, Cloudfront::Private::Base
+	  autoload :Base, 'cloudfront-private/base'
+	  autoload :Configuration, 'cloudfront-private/configuration'
+	  
+	  module Streaming
+	  	autoload :Base, 'cloudfront-private/streaming/base'
+	  end
   end
 end

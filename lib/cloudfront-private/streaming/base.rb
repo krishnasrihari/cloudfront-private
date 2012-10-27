@@ -2,13 +2,16 @@ require 'openssl'
 require 'digest/sha2'
 require 'base64'
 require "cloudfront-private/version"
+require 'cloudfront-private/configuration'
 
 module Cloudfront
 	module Private
 		module Streaming
 			module Base
+				extend ActiveSupport::Concern
+				include Cloudfront::Private::Configuration
 				
-				KEY_PAIR_ID = Cloudfront::Private::Configuration.key_pair_id
+				KEY_PAIR_ID = @key_pair_id
 			
 			  def self.get_url(_request, _resource)
 			    url = get_signed_url(_resource, _request)
@@ -19,7 +22,7 @@ module Cloudfront
 			  protected
 			
 			    def self.get_signed_url(_resource, _request)
-			      pk_file        = Rails.root.join('certs',Cloudfront::Private::Configuration.pem_file)
+			      pk_file        = Rails.root.join('certs',@pem_file)
 			      key            = OpenSSL::PKey::RSA.new(File.readlines(pk_file).join(""))
 			      policy         = create_policy(_resource, _request)
 			      sigcrypt       = key.sign(OpenSSL::Digest::SHA1.new, policy)

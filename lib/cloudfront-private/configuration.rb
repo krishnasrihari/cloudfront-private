@@ -1,7 +1,10 @@
+require 'active_support/concern'
+
 module Cloudfront
 	module Private
-		module Configuration
-		
+		module Configuration			
+			extend ActiveSupport::Concern
+			
 			included do
 				add_config :key_pair_id
 				add_config :pem_file

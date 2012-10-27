@@ -9,6 +9,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = ""
 
 	gem.add_development_dependency "railties", "~> 3.0"	
+	gem.add_development_dependency "rspec", "~> 2.11"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
