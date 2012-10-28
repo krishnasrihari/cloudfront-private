@@ -3,10 +3,8 @@ require File.expand_path('../lib/cloudfront-private/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Krishna Srihari"]
-  gem.email         = ["krishna.srihari@gmail.com"]
   gem.description   = %q{Cloudfront private streaming from Ruby on Rails }
-  gem.summary       = %q{Cloudfront private streaming from Ruby on Rails}
-  gem.homepage      = ""
+  gem.summary       = %q{Cloudfront private streaming for mp3, mp4 and flv}  
 	
 	gem.add_development_dependency "rails", ">= 3.0.0"	
 	gem.add_development_dependency "rspec"
