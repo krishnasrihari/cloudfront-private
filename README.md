@@ -42,8 +42,8 @@ The private pem file should placed in 'certs' directory under Rails root
 Access private content in your view
 
 		<% filename = "bucket-name/filename.mp4/flv %> 
-    <% file = Cloudfront.get_url(request,filename) %>
-    <div id='media-file'></div>
+		<% file = Cloudfront.get_url(request,filename) %>
+		<div id='media-file'></div>
 
 Write javascript file to stream your private in jwplayer with jquery
 
