@@ -35,11 +35,12 @@ checkout this file to add amazon cloudfront credentials
 			config.pem_file = 'your-private.pem'
 		end
 		
-add your amazon cloudfront private key pair id and pem file name
+Edit above file with your amazon cloudfront private key pair id and pem file name
 
 The private pem file should placed in 'certs' directory under Rails root
    
 Access private content in your view
+
 		<% filename = "bucket-name/filename.mp4/flv %> 
     <% file = Cloudfront.get_url(request,filename) %>
     <div id='media-file'></div>
