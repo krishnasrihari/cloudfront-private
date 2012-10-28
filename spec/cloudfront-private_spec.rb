@@ -19,4 +19,17 @@ describe Cloudfront::Private do
 		end		
 	end
 	
+	context "get_url" do
+		let(:filename) { 'streaming/private-media/12.mp4' }
+		let(:request) { 'request' }
+		
+		before do
+			Rails.stub(:root).and_return(['/rails'])
+		end
+		
+		it "should be accessible" do
+			Cloudfront::Private::Streaming::Base.get_url(request,filename).should_not be_nil
+		end
+	end
+	
 end

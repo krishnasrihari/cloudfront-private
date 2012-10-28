@@ -7,8 +7,8 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Cloudfront private streaming from Ruby on Rails }
   gem.summary       = %q{Cloudfront private streaming from Ruby on Rails}
   gem.homepage      = ""
-
-	gem.add_development_dependency "railties", "~> 3.0"	
+	
+	gem.add_development_dependency "rails", ">= 3.0.0"	
 	gem.add_development_dependency "rspec", "~> 2.11"
 
   gem.files         = `git ls-files`.split($\)

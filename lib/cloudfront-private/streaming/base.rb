@@ -4,6 +4,9 @@ require 'base64'
 require "cloudfront-private/version"
 require 'cloudfront-private/configuration'
 
+require 'rails'
+
+
 module Cloudfront
 	module Private
 		module Streaming
