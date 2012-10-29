@@ -16,10 +16,6 @@ Or install it yourself as:
 
     $ gem install cloudfront-private
     
-Finally, boostrap the cloudfront-private
-
-    $ rails generate cloudfront:install		    
-
 ## Getting started
 
 Generate initializer cloudfront-private
@@ -42,7 +38,7 @@ The private pem file should placed in 'certs' directory under Rails root
 Access private content in your view
 
 		<% filename = "bucket-name/filename.mp4/flv %> 
-		<% file = Cloudfront.get_url(request,filename) %>
+		<% file = Cloudfront::Private::Streaming::Base.get_url(request,filename) %>
 		<div id='media-file'></div>
 
 Write javascript file to stream your private in jwplayer with jquery
@@ -66,7 +62,8 @@ Write javascript file to stream your private in jwplayer with jquery
 		}
 		
 		$(document).ready(private_streaming);
-		
+
+Restart your server to get cloudfront configuration		
 		              
 ## Contributing
 
