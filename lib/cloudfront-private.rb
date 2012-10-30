@@ -12,8 +12,8 @@ module Cloudfront
 	      Cloudfront::Private::Base.configure(&block)
 	    end
 	    
-	    def get_url(_resource,_request)
-	    	Cloudfront::Private::Base.get_url(_resource,_request)
+	    def get_url(_request,_resource)
+	    	Cloudfront::Private::Base.get_url(_request, _resource)
 	    end
 	  end
 	  
