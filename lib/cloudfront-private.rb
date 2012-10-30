@@ -10,7 +10,11 @@ module Cloudfront
 	
 	    def configure(&block)
 	      Cloudfront::Private::Base.configure(&block)
-	    end	
+	    end
+	    
+	    def get_url(_resource,_request)
+	    	Cloudfront::Private::Base.get_url(_resource,_request)
+	    end
 	  end
 	  
 	  autoload :Base, 'cloudfront-private/base'
