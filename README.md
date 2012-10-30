@@ -63,7 +63,7 @@ Write javascript file to stream your private in jwplayer with jquery
 		
 		$(document).ready(private_streaming);
 
-Restart your server to get cloudfront configuration		
+Restart your server to get update cloudfront configuration		
 		              
 ## Contributing
 
