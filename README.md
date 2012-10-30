@@ -63,6 +63,8 @@ Write javascript file to stream your private in jwplayer with jquery
 		
 		$(document).ready(private_streaming);
 
+Udate 'xxxxx.cloudfront.net' with your cloudfront distribution url
+
 Restart your server to get update cloudfront configuration		
 		              
 ## Contributing
