@@ -17,23 +17,5 @@ describe Cloudfront::Private do
 		it "pem file" do
 			Cloudfront::Private::Base.pem_file.should eq('xyz.pem')
 		end		
-	end
-	
-	context "get_url" do
-		let(:resource) { 'streaming/private-media/12.mp4' }
-		let(:request) { 'request' }
-
-		before do
-			Rails.stub(:root).and_return(['/rails'])
-
-			Cloudfront::Private.configure do |config|
-				config.key_pair_id = '867234983'
-				config.pem_file	=	'xyz.pem'				
-			end
-		end
-
-		it "should be accessible" do
-			Cloudfront::Private.get_url(request,resource).should_not be_nil
-		end
-	end
+	end	
 end
