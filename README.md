@@ -39,7 +39,7 @@ Access private content in your view
 
 		<% filename = "bucket-name/filename.mp4 %> 
 		<% file = Cloudfront::Private.get_url(request,filename) %>
-		<div id='media-file'></div>
+		<div id='media_player'></div>
 
 Write javascript file to stream your private in jwplayer with jquery
 
