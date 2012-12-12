@@ -1,18 +1,18 @@
 require 'active_support/concern'
 
 module Cloudfront
-	module Private
-		module Configuration			
-			extend ActiveSupport::Concern
-			
-			included do
-				add_config :key_pair_id
-				add_config :pem_file
-			end
-			
-			module ClassMethods
-			
-			  def add_config(name)
+  module Private
+    module Configuration      
+      extend ActiveSupport::Concern
+      
+      included do
+        add_config :key_pair_id
+        add_config :pem_file
+      end
+      
+      module ClassMethods
+      
+        def add_config(name)
           class_eval <<-RUBY, __FILE__, __LINE__ + 1
             def self.#{name}(value=nil)
               @#{name} = value if value
@@ -36,7 +36,7 @@ module Cloudfront
         def configure
           yield self
         end        
-			end
-		end
-	end
+      end
+    end
+  end
 end
